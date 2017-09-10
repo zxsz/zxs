@@ -35,9 +35,9 @@ for((i=0;i<${#ip[*]};i++));do
 	{
 	copy_key ${ip[$i]} ${user[$i]} ${password[$i]} &>/dev/null 
 	if [ $? -eq 1 ];then
-		 echo -e "${ip[$i]}:   send ssh_key[\033[32m success \033[0m]"
+		 echo -e "${ip[$i]}:\tsend ssh_key[\033[32m success \033[0m]"
 	else
-		 echo -e "${ip[$i]}:   send ssh_key[\033[31m failure \033[0m]"
+		 echo -e "${ip[$i]}:\tsend ssh_key[\033[31m failure \033[0m]"
 	fi
 	} &
 done
