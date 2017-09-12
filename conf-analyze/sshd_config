@@ -105,7 +105,7 @@ AcceptEnv XMODIFIERS
 
 #AllowAgentForwarding yes
 #AllowTcpForwarding yes
-#GatewayPorts no
+#GatewayPorts no            # ssh隧道做跳板机中需要启用
 #X11Forwarding no
 X11Forwarding yes
 #X11DisplayOffset 10
@@ -117,13 +117,13 @@ X11Forwarding yes
 #UsePrivilegeSeparation yes
 #PermitUserEnvironment no
 #Compression delayed
-#ClientAliveInterval 0
-#ClientAliveCountMax 3
+#ClientAliveInterval 0       # 连上去没有数据传输是否端口 需要下面一项联合起来用 探测的间隔
+#ClientAliveCountMax 3       # 探测次数
 #ShowPatchLevel no
 #UseDNS yes
 UseDNS no
 #PidFile /var/run/sshd.pid
-#MaxStartups 10:30:100
+#MaxStartups 10:30:100       # 表示
 #PermitTunnel no
 #ChrootDirectory none
 
@@ -138,3 +138,8 @@ Subsystem	sftp	/usr/libexec/openssh/sftp-server
 #	X11Forwarding no
 #	AllowTcpForwarding no
 #	ForceCommand cvs server
+
+# 配置文件没有的,白名单和黑名单,白名单优先级
+#AllowUsers mage wang 
+#DenyUsers wang
+
