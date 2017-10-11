@@ -9,11 +9,11 @@
 # -------------------------------------------------------------------------
 
 echo_info() {
-   echo -e "[\033[32minfo\033[0m] $*"
+   echo -e "\033[32mINFO\033[0m $*"
 }
 
 echo_error() {
-   echo -e "[\033[32merror\033[0m] $*"
+   echo -e "[\033[32ERROR\033[0m] $*"
 }
 
 # Usage: action <"comment"> <COMMAND>
